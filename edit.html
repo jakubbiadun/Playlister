@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link href="edit.css" rel="stylesheet">
+</head>
+<body onload="read()">
+    <h2 style="text-align: center">Here you can check your suggestions</h2>
+    <div class="container">
+        <div class="form_container">
+            <form class="update_form">
+                <input type="text" class="id"/>
+                <input type="text" class="uname"/>
+                <input type="email" class="uemail"/>
+                <input type="text" class="uartist"/>
+                <input type="text" class="umessage"/>
+                <button onclick="update()">Update</button>
+            </form>
+            <table>
+                <thead>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Artist</th>
+                <th>Suggestion</th>
+                </thead>
+                <tbody class="data_table">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="edit.js"></script>
+</body>
+</html>

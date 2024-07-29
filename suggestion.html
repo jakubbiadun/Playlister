@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Jakub Biaduń"/>
+    <title>Playlister</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet"/>
+
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+          rel="stylesheet" type="text/css"/>
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#page-top">Playlister</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                <li class="nav-item"><a class="nav-link" href="index.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Why Playlister?</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="ranking.html">Ranking</a></li>
+                <li class="nav-item"><a class="nav-link" href="suggestion.html">Your suggestion</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<section class="page-section bg-primary">
+    <div class="container px-5 my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0 rounded-3 shadow-lg">
+                    <div class="card-body p-4">
+                        <div class="text-center">
+                            <div class="h1 fw-light">Songs Request</div>
+                            <p class="mb-4 text-muted">Write below your suggestion and leave your personal
+                                information</p>
+                        </div>
+                        <form id="contactForm">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Name"
+                                       pattern="^[a-zA-ZąćęłńóśżźĄĆĘŁŃÓŚŻŹ]{2,20}$" maxlength="20"
+                                       required/>
+                                <label for="name">Name</label>
+                                <div class="invalid-feedback">Name is required.</div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="emailAddress" type="email" placeholder="Email"
+                                       maxlength="30" size="30"
+                                       pattern="^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                                <label for="emailAddress">Email Address</label>
+                                <div class="invalid-feedback">Email Address is
+                                    required.
+                                </div>
+                                <div class="invalid-feedback">Email Address Email
+                                    is not valid.
+                                </div>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="artist" type="text" placeholder="Artist"
+                                       maxlength="20" required/>
+                                <label for="artist">Artist's Name</label>
+                                <div class="invalid-feedback">Artist's name is
+                                    required.
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text"
+                                          placeholder="Write down your songs suggestion" style="height: 10rem;"
+                                          required></textarea>
+                                <label for="message">Write down your songs suggestion</label>
+                                <div class="invalid-feedback">You forgot about
+                                    songs?
+                                </div>
+                            </div>
+                            <p class="mb-1 text-muted" style="text-align: center">Where your suggestion is
+                                available?</p>
+                            <div class="checkbox-container"
+                                 style="display: flex;justify-content: center; gap: 5px; margin-bottom: 0.5rem">
+                                <input type="checkbox" name="spotify" id="spotify" checked>
+                                <label for="spotify">Spotify</label>
+                                <input type="checkbox" name="Youtube" id="Youtube">
+                                <label for="Youtube">Youtube</label>
+                                <input type="checkbox" name="AppleMusic" id="AppleMusic">
+                                <label for="AppleMusic">Apple Music</label>
+                                <input type="checkbox" name="Tidal" id="Tidal">
+                                <label for="Tidal">Tidal</label>
+                            </div>
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                </div>
+                            </div>
+                            <div class="d-none" id="submitErrorMessage">
+                                <div class="text-center text-danger mb-3">Error sending message!</div>
+                            </div>
+
+                            <div class="d-grid">
+                                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit
+                                </button>
+                                <!--<a class="btn btn-dark btn-lg" href="edit.html">Edit</a> -->
+                            </div>
+                        </form>
+                        <div id="form-error"></div>
+                        <section id="data-section">
+                            <h2 class="fw-light" style="margin-top: 10px">Suggestions:</h2>
+                            <ul id="data-list"></ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Call to action-->
+
+<!-- Footer-->
+<footer class="bg-light py-5">
+    <div class="container px-4 px-lg-5">
+        <div class="small text-center text-muted">Copyright &copy; 2024 - Jakub Biadun</div>
+    </div>
+</footer>
+<script src="edit.js"></script>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+</html>
